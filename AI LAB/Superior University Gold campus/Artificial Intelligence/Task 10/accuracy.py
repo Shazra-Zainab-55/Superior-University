@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("AI LAB\Superior University Gold campus\Artificial Intelligence\Task 10\Dataset.csv")
+df = pd.read_csv("Superior University Gold campus\Artificial Intelligence\Task 10\Dataset.csv")
 # df = pd.read_json("data.json")
 # pd.set_option("display.max_rows", None, "display.max_columns", None)
 print(f"Number of Rows: {df.shape[0]} \nNumber of Columns: {df.shape[1]}")
@@ -82,11 +82,11 @@ trainData.shape
 testData.shape
 # testData.iloc()[:, 1:]
 
-train_x = trainData.iloc()[:, 1:]
-test_x  = testData.iloc()[:, 1:]
+train_x = trainData.iloc()[:, 2:]
+test_x  = testData.iloc()[:, 2:]
 
-train_y = trainData.iloc()[:, 0]
-test_y  = testData.iloc()[:, 0]
+train_y = trainData.iloc()[:, 2]
+test_y  = testData.iloc()[:, 2]
 train_x.head(2)
 train_y.head(2)
 test_x.head(2)
@@ -109,6 +109,3 @@ pd.options.mode.chained_assignment = None
 
 testdata_predict['Prediction'] = model_predictions
 model_accuracy_score = accuracy_score(testdata_predict['price'], testdata_predict['Prediction'])
-
-print("-- Model Accuracy Score: ", end='')
-print(round(model_accuracy_score,3))
